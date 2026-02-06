@@ -1,1 +1,16 @@
+bash:
+# Add this to ~/.bashrc
+
+# Function to get Git branch
+git_branch() {
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [ -n "$branch" ]; then
+    echo " ($branch)"
+  fi
+}
+
+# PS1 prompt
+PS1='\[\e[32m\]➜ \[\e[33m\]\w\[\e[0m\]$(git_branch) \$ '
+
+zsh:
 %(?:%{%}%1{➜%} :%{%}%1{➜%} ) %{%}%c%{%} $(git_prompt_info)
