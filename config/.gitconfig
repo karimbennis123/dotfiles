@@ -1,0 +1,12 @@
+[user]
+	email = karimbennis@yahoo.com
+	name = karimbennis123
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[core]
+	autocrlf = input
+[safe]
+	directory = *
