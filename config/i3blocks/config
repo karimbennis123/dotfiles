@@ -1,0 +1,41 @@
+# Global properties
+separator=true
+separator_block_width=50
+
+[volume]
+label= 
+command=/home/$USER/.config/scripts/volume
+signal=10
+
+[disk]
+label= 
+# command=/home/$USER/.config/scripts/disk
+command=/home/$USER/.config/scripts/disk
+interval=1000
+
+[memory]
+label= 
+command=/home/$USER/.config/scripts/memory
+interval=10
+
+[temperature]
+label= 
+command=echo $(/home/$USER/.config/scripts/temperature) °C
+interval=10
+
+[bluetooth]
+full_text=
+command=blueman-manager 
+
+[network]
+full_text=
+command=alacritty --title nmtui -e nmtui
+
+[battery]
+label= 
+command=echo $(cat /sys/class/power_supply/BAT0/capacity)%
+interval=10
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
